@@ -16,8 +16,8 @@ public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
   {
     return true;
   }
-	else
-	{
-	  return false;
-	}
+  else
+  {
+    return false;
+  }
 }

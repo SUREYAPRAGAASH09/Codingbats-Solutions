@@ -1,5 +1,3 @@
-# Coding-bat-s-Solution-collection-
-
 CodingBat is a free site of live coding problems to build coding skill in Java and Python (example problem). CodingBat is a project by Nick Parlante, 
 a computer science lecturer at Stanford. Going through many practice problem is a great way to solidify your understanding of how the code should work.
 

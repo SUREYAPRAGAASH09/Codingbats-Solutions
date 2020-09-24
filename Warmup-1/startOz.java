@@ -39,3 +39,25 @@ public String startOz(String str) {
   }
   return returnString;
 }
+
+My Solution 2 : [Logic changed]
+---------------
+public String startOz(String str) {
+  String returnString = ""; 
+  char[] charArray = str.toCharArray();
+  if (str.length() > 0)
+  {
+      if (str.length() >= 2 && (charArray[0] == 'o') && (charArray[1] == 'z'))
+         returnString = "oz";
+      else 
+      {
+        if ((charArray[0] == 'o'))
+          returnString = "o";
+        else if (charArray[1] == 'z')
+          returnString = "z";
+      }  
+  }
+  
+  return returnString;
+}
+

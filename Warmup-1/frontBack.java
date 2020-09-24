@@ -34,3 +34,18 @@ My Solution :
 	        return str;
         }
 }
+
+Solution 2 :
+------------
+	int Lenght = str.length ();
+        String newString = "";
+        
+        if (Lenght >= 2)
+        {
+    	      char[] ch = str.toCharArray ();
+    	      for (int i = 1; i <= Lenght-2; i++)  
+    	         newString = newString + ch[i];
+    	      return ch[Lenght-1] +  newString + ch[0];
+      	} 
+        else
+            return str;

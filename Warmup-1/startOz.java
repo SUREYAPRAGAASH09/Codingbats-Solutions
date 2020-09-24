@@ -61,3 +61,23 @@ public String startOz(String str) {
   return returnString;
 }
 
+My Solution 3 : [Code optimized too much]
+---------------
+public String startOz(String str) {
+  int StrLength = str.length(); 
+  if (StrLength > 0)
+  {
+      if (StrLength >= 2 && (str.charAt(0) == 'o') && (str.charAt(1) == 'z'))
+         return "oz";
+      else 
+      {
+        if ((str.charAt(0) == 'o'))
+          return  "o";
+        else if (str.charAt(1) == 'z')
+          return "z";
+      }  
+  }
+  return "";
+}
+
+

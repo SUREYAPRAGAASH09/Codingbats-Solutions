@@ -17,3 +17,16 @@ My Solution :
 
       return str + str + str;
     }
+
+My solution 2 :
+--------------
+          public String front3(String str) {
+                  String newString = "";
+                  if (str.length () >= 3){
+                    for (int i=0;i<=2;i++)
+                      newString += str.charAt(i);
+                  }
+                  else
+                    newString = str;
+                  return newString + newString + newString;
+          }

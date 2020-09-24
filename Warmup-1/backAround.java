@@ -19,3 +19,13 @@ My Solution :
                   return str + str + str;
             }
           }
+My solution 2 :
+---------------
+          public String backAround(String str) {
+                    char lastChar = str.charAt(str.length() - 1); 
+                    if (str.length() >= 2) 
+		    return lastChar + str + lastChar;
+	          else 
+		    return str + str + str;
+	
+          }

@@ -13,17 +13,11 @@ My Solution :
         public String delDel(String str) {
               String  modifiedStr = "";
               char[] charArray = str.toCharArray();
-                if ( ((str.length()-1) >= 3) && (charArray[1] == 'd') && (charArray[2] == 'e') && (charArray[3] == 'l') )
-                {
+                if ( ((str.length()-1) >= 3) && (charArray[1] == 'd') && (charArray[2] == 'e') && (charArray[3] == 'l') ) {
                     for (int i= 4;i<=str.length()-1;i++)
-                    {
                         modifiedStr += charArray[i];
-                    }
                     return charArray[0] + modifiedStr;    
                 }
                 else
-                {
-                    return str;    
-                }
-
+                   return str;    
         }

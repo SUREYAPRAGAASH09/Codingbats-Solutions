@@ -1,0 +1,91 @@
+                                                                  TCS Ninja coding questions - 1
+
+Problem Statement :
+------------------
+
+Consider the below series:
+
+1, 2, 1, 3, 2, 5, 3, 7, 5, 11, 8, 13, 13, 17, ...
+
+This series is a mixture of 2 series - all the odd terms in this series form a Fibonacci series and all the even terms are the prime numbers in ascending order.
+
+Write a program to find the Nth term in this series.
+
+The value N is a Positive integer that should be read from STDIN. The Nth term that is calculated by the program should be written to STDOUT. 
+Other than the value of Nth term, no other characters/strings or message should be written to STDOUT.
+
+For example, when N = 14, the 14th term in the series is 17. So only the value 17 should be printed to STDOUT.
+
+My Solution :
+-------------
+    #include <iostream>
+
+int main()
+{
+    int iterator, a, b, c,lastPrime, Number, overallFlag, flag,sqrtRoot, prime, printNumber;
+    a = 0;
+    b = 1;
+
+    for (iterator = 1;iterator <= 14;iterator++)
+    {
+        if (iterator % 2 == 1)
+        {
+            if (iterator == 1)
+            {
+                c = 1;
+            }
+            else
+            {
+                c = a + b;
+                a = b;
+                b = c;
+            }
+            
+            //std::cout << "\ninside if  " + c;
+            printNumber = c;
+        }
+        else
+        {
+            if (iterator == 2)
+            {
+                lastPrime = 2;
+            }
+            else
+            {
+                Number = lastPrime;
+                overallFlag = 1;
+                while (overallFlag)
+                {
+                    Number += 1;
+                    prime = 2;
+                    flag = 0;
+                    sqrtRoot = sqrt(Number) + 1;
+                    while (prime < sqrtRoot)
+                    {
+                        if (Number % prime == 0)
+                        {
+                            flag = 1;
+                            break;
+                        }
+                        prime += 1;
+                    }
+
+                    if (flag == 0)
+                    {
+                        lastPrime = Number;
+                        overallFlag = 0;
+                    }
+                    else
+                    {
+                        overallFlag = 1;
+                    }
+                }
+            }
+            //std::cout << "\n inside else ";
+            printNumber = lastPrime;
+        }
+        std::cout << printNumber;
+        std::cout << ",";
+    }
+    std::cout << "Hello World!\n";
+}

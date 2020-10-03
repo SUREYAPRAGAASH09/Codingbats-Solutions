@@ -20,10 +20,12 @@ Examples:
     
 My Approach :
 -------------
-  * first of all, find the lenght of samples array.
-  * And validate if lenght of the array greater one, if less than 1 , we can find the samples thorough this solution
-  * sort the samples array intially
-  * Then iterator through the sample array, and find range of rocks mentioned.
+  * First of all, find the lenght of samples array.
+  * And validate if lenght of the samples array is greater than one, if not samples can't be found.
+  * Sort the rock samples.
+  * Then iterator through the rock samples to find range of rocks given.
+  * if fisrt given range was found, using a temporary memory store the array index of next element then iterate through samples array
+  * By doing so we w'not be comparing unneccessary range with samples.
   
 My Solution :
 -------------
@@ -50,26 +52,32 @@ My Solution :
             Array.Sort(samples);
 
             int[] answer = new int[2] { 0,0 };
+            if (lenght > 1)
+            {
+                  for (int rangeIterator = 0;rangeIterator<=1;rangeIterator++)
+                  {
+                      if (rangeIterator == 0)
+                          sampleIterator = 0;
+                      else
+                          sampleIterator = GetIndex(samples, StartingValue);
+                      while (sampleIterator < lenght)
+                      {
+                          if (samples[sampleIterator] >= ranges[rangeIterator,0] && samples[sampleIterator] <= ranges[rangeIterator,1])
+                              answer[rangeIterator] += 1;
+                          else 
+                              break;
+                          sampleIterator += 1;
+                      }
+                      StartingValue = samples[sampleIterator];
+                  }
 
-            for (int rangeIterator = 0;rangeIterator<=1;rangeIterator++)
-            {
-                if (rangeIterator == 0)
-                    sampleIterator = 0;
-                else
-                    sampleIterator = GetIndex(samples, StartingValue);
-                while (sampleIterator < lenght)
-                {
-                    if (samples[sampleIterator] >= ranges[rangeIterator,0] && samples[sampleIterator] <= ranges[rangeIterator,1])
-                        answer[rangeIterator] += 1;
-                    else 
-                        break;
-                    sampleIterator += 1;
-                }
-                StartingValue = samples[sampleIterator];
+                  for (int answerIterator = 0;answerIterator<=1;answerIterator++)
+                  {
+                      Console.WriteLine(answer[answerIterator]);
+                  }
             }
-            
-            for (int answerIterator = 0;answerIterator<=1;answerIterator++)
+            else
             {
-                Console.WriteLine(answer[answerIterator]);
+                  Console.WriteLine("Provide more samples");
             }
         }

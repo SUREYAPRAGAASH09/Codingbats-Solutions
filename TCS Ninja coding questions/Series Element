@@ -1,4 +1,6 @@
-                                                                  TCS Ninja coding questions - 1
+                                                                  
+                                                                  Series Element
+
 
 Problem Statement :
 ------------------
@@ -18,7 +20,7 @@ For example, when N = 14, the 14th term in the series is 17. So only the value 1
 
 My Solution :
 -------------
-    #include <iostream>
+#include <iostream>
 
 int main()
 {

@@ -1,0 +1,75 @@
+John is a geologist, and he needs to count rock samples in order to send it to a chemical laboratory. 
+He has a problem. The laboratory only accepts rock samples by a range of its size in ppm (parts per million).
+John needs your help. Your task is to develop a program to get the number of rocks in each range accepted by the laboratory.
+
+Problem Statement: 
+------------------
+      Given an array samples[] denoting sizes of rock samples and a 2D array ranges[], 
+      the task is to count the rock samples that are in the range ranges[i][0] to ranges[i][1], for every possible 1 <= i <= N.
+      
+Examples:
+----------
+    Input: samples[] = {345, 604, 321, 433, 704, 470, 808, 718, 517, 811}, ranges[] = {{300, 380}, {400, 700}}
+    Output: 2 4
+    Explanation: 
+    Range [300, 380]: Samples {345, 321} lie in the range. Therefore, the count is 2. 
+    Range [400, 700]: Samples {433, 604, 517, 470} lie in the range. Therefore, the count is 4.
+
+    Input: samples[] = {400, 567, 890, 765, 987}, ranges[] = {{300, 380}, {800, 1000}
+    Output: 0 2
+    
+My Approach :
+-------------
+  * first of all, find the lenght of samples array.
+  * And validate if lenght of the array greater one, if less than 1 , we can find the samples thorough this solution
+  * sort the samples array intially
+  * Then iterator through the sample array, and find range of rocks mentioned.
+  
+My Solution :
+-------------
+        public static int GetIndex(int[] ArrayValues, int searchEle)
+        {
+            int index = -1;
+            for (int iterator = 0; iterator <= ArrayValues.Length;iterator++)
+            {
+                index += 1;
+                if (ArrayValues[iterator] == searchEle)
+                    break;
+            }
+            return index;
+        }
+
+        static void Main(string[] args)
+        {
+            int[,] ranges = { { 300, 380}, { 400, 700} };
+
+            int[] samples = { 345, 604, 321, 433, 704, 470, 808, 718, 517, 811 };
+
+            int lenght = samples.Length, sampleIterator, StartingValue = samples[0];
+
+            Array.Sort(samples);
+
+            int[] answer = new int[2] { 0,0 };
+
+            for (int rangeIterator = 0;rangeIterator<=1;rangeIterator++)
+            {
+                if (rangeIterator == 0)
+                    sampleIterator = 0;
+                else
+                    sampleIterator = GetIndex(samples, StartingValue);
+                while (sampleIterator < lenght)
+                {
+                    if (samples[sampleIterator] >= ranges[rangeIterator,0] && samples[sampleIterator] <= ranges[rangeIterator,1])
+                        answer[rangeIterator] += 1;
+                    else 
+                        break;
+                    sampleIterator += 1;
+                }
+                StartingValue = samples[sampleIterator];
+            }
+            
+            for (int answerIterator = 0;answerIterator<=1;answerIterator++)
+            {
+                Console.WriteLine(answer[answerIterator]);
+            }
+        }

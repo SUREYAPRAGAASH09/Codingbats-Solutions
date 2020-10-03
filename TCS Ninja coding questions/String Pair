@@ -1,0 +1,109 @@
+                                                                        String Pair
+Problem Description
+------------------
+One person hands over the list of digits to Mr. String, But Mr. String understands only strings. Within strings also he understands only vowels. 
+Mr. String needs your help to find the total number of pairs which add up to a certain digit D.The rules to calculate digit D are as follow :-
+Take all digits and convert them into their textual representation.
+Next, sum up the number of vowels i.e. {a, e, i, o, u} from all textual representation.
+This sum is digit D.
+Now, once digit D is known find out all unordered pairs of numbers in input whose sum is equal to D. 
+Refer example section for better understanding.
+
+Examples
+--------
+    Input : 5
+
+    1 2 3 4 5
+
+    Output : one
+
+    Input : 3
+
+    7 4 2
+
+    Output : zero
+
+Constraints
+-----------
+1 <= N <= 100
+
+1 <= value of each element in second line of input <= 100
+
+Number 100, if and when it appears in input should be converted to textual representation as hundred and not as one hundred. Hence number of vowels in number 100 should be 2 and not 4
+
+Input
+
+First line contains an integer N which represents number of elements to be processed as input
+
+Second line contains N numbers separated by space
+
+Output
+
+Lower case representation of textual representation of number of pairs in input that sum up to digit D
+
+Note: – (If the count exceeds 100 print “greater 100”)
+
+[Source : https://www.texspert.com/2020/08/string-pair-codevita-9-solution.html]
+My Approach : 
+-------------
+1 -> one -> o, e
+
+2 -> two -> o
+
+3 -> three -> e, e
+
+4 -> four -> o, u
+
+5 -> five - > i, e
+
+Thus, count of vowels in textual representation of numbers in input = {2 + 1 + 2 + 2 + 2} = 9. Number 9 is the digit D referred to in section above.
+
+Now from given list of number {1,2,3,4,5} -> find all pairs that sum up to 9.
+
+Upon processing this we know that only a single unordered pair {4, 5} sum up to 9. Hence the answer is 1. 
+However, output specification requires you to print textual representation of number 1 which is one. Hence output is one.
+
+Note: - Pairs {4, 5} or {5, 4} both sum up to 9. But since we are asking to count only unordered pair, 
+the number of unordered pair is this combination is only one.
+
+My Solution : [I have Coded only for 1 - 10 numbers ]
+-------------
+        public static int GetVowelCount(String NumericalName)
+        {
+            int VowelCount = 0;
+            for (int characterCount=0; characterCount < NumericalName.Length; characterCount++)
+            {
+                if (NumericalName[characterCount] == 'a' || NumericalName[characterCount] == 'e' || NumericalName[characterCount] == 'i' || NumericalName[characterCount] == 'o' || NumericalName[characterCount] == 'u')
+                    VowelCount += 1;
+            }
+            return VowelCount;
+        }
+
+        static void Main(string[] args)
+        {
+            Dictionary<int, string> NumberToWord = new Dictionary<int, string>();
+            NumberToWord.Add(1, "one");
+            NumberToWord.Add(2, "two");
+            NumberToWord.Add(3, "three");
+            NumberToWord.Add(4, "four");
+            NumberToWord.Add(5, "five");
+            NumberToWord.Add(6, "six");
+            NumberToWord.Add(7, "seven");
+            NumberToWord.Add(8, "eight");
+            NumberToWord.Add(9, "nine");
+            NumberToWord.Add(10, "ten");
+            int FirstInputN = 3, SumOfAllVowels = 0, finalSum = 0;
+            int[] InputValues = new int[] { 7, 4, 3 };
+            
+            for (int iterator = 0; iterator < FirstInputN; iterator++ )
+                SumOfAllVowels += GetVowelCount(NumberToWord[InputValues[iterator]]);
+            for (int iteratorI = 0;iteratorI<= FirstInputN - 2;iteratorI++)
+            {
+                for (int iteratorJ = iteratorI+1;iteratorJ< FirstInputN; iteratorJ++)
+                {
+                    if ((InputValues[iteratorI] + InputValues[iteratorJ]) == SumOfAllVowels)
+                        finalSum += 1;
+                }
+            }
+            Console.WriteLine(finalSum);
+        }

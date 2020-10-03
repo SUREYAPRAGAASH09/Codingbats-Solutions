@@ -1,9 +1,9 @@
                                                                   
                                                                   Counting Rock Samples
                                                                   
-John is a geologist, and he needs to count rock samples in order to send it to a chemical laboratory. 
-He has a problem. The laboratory only accepts rock samples by a range of its size in ppm (parts per million).
-John needs your help. Your task is to develop a program to get the number of rocks in each range accepted by the laboratory.
+                John is a geologist, and he needs to count rock samples in order to send it to a chemical laboratory. 
+                He has a problem. The laboratory only accepts rock samples by a range of its size in ppm (parts per million).
+                John needs your help. Your task is to develop a program to get the number of rocks in each range accepted by the laboratory.
 
 Problem Statement: 
 ------------------

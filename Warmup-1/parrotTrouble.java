@@ -13,8 +13,5 @@ MY SOLUTION :
 -------------
     public boolean parrotTrouble(boolean talking, int hour) {
       if ( (talking) && ((7>hour)||(hour>20)) )
-      {
          return true;
-      }
-      return false;
     }

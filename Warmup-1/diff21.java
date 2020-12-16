@@ -17,12 +17,12 @@ MY SOLUTION :
           }
           else
           {
-            return Math.abs(n - 21);
+            return n - 21;
           }
         }
 
 My Solution 2 :
 --------------
         public int diff21(int n) {
-          return (n > 21) ? Math.abs(n - 21) * 2 :  Math.abs(n - 21);
+          return (n > 21) ? Math.abs(n - 21) * 2 :  n - 21;
         }

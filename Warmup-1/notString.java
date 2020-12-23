@@ -32,4 +32,26 @@ My Solutions :
 		    return "not " + str;
 	     }
     }
-      
+	    
+    solution 3 :
+    -----------	    
+      public String notString(String str) 
+     {
+	  Boolean Flag = false;
+
+	  if  ((str.length() == 2) || (str.length() == 1)) 
+	    Flag = true;
+	  else if (str.length() >= 3) {
+	    char[] charArr = str.toCharArray(); 
+	    if ( (charArr[0] == 'n') && (charArr[1] == 'o') && (charArr[2] == 't'))
+	      Flag = false;
+	    else
+	      Flag = true;
+	  }
+
+	  if (Flag)
+	    return "not " + str;
+	  else
+	    return str;
+    }
+

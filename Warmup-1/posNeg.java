@@ -32,3 +32,30 @@ public boolean posNeg(int a, int b, boolean negative) {
       return false;
     } 
 }
+
+My Solution 2:
+-------------
+public boolean posNeg(int a, int b, boolean negative) 
+{
+  boolean flag =true;
+  
+  if ( (a<0) && (b<0) )
+  {
+    if (negative)
+      flag = true;
+    else
+      flag = false;
+  }
+  else if ( (a<0) || (b<0) )
+  {
+    if (!(negative))
+     flag = true;
+    else
+     flag = false;
+  }
+  else
+    flag = false;
+    
+  return flag;
+}
+

@@ -30,3 +30,18 @@ My solution 2 :
             newString = str;
           return newString + newString + newString;
   }
+
+My Solution 3:
+--------------
+        public String front3(String str) 
+        {
+                  String temp = "";
+
+                  if (str.length() >= 3)
+                    temp = Character.toString(str.charAt(0)) + Character.toString(str.charAt(1)) + Character.toString(str.charAt(2)); 
+                  else
+                    temp = str;
+
+                  return temp + temp + temp;
+        }
+

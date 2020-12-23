@@ -58,19 +58,16 @@ Solution 3 :
 	  if (str.length() >= 3)
 	  {
 	    for (int itr = 1;itr <= str.length() - 2;itr ++)
-	    {
 	      FinalStr = FinalStr + str.charAt(itr);
-	    }
+
 	    FinalStr = str.charAt(str.length()-1) + FinalStr + str.charAt(0);
 	  }
 	  else if (str.length() >= 2)
-	  {
 	    FinalStr = Character.toString(str.charAt(str.length()-1)) + Character.toString(str.charAt(0));
-	  }
 	  else
-	  {
 	    FinalStr = str;
-	  }
+
 	  return FinalStr;
-       }
+     }
+
 

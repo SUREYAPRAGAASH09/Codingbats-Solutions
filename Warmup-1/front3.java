@@ -45,3 +45,11 @@ My Solution 3:
                   return temp + temp + temp;
         }
 
+My Solution 4:
+--------------
+        public String front3(String str) {
+          String temp = (str.length() >= 3) ? Character.toString(str.charAt(0)) + Character.toString(str.charAt(1)) + Character.toString(str.charAt(2)) : str;
+          return temp + temp + temp;
+        }
+
+

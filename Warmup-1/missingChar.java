@@ -12,5 +12,13 @@ Test Cases :
 My Solution :
 -------------
     public String missingChar(String str, int n) {
+              String FinalStr = "";
+  
+              for (int itr = 0;itr <= str.length()-1; itr++)
+              {
+                if (itr != n)
+                  FinalStr = FinalStr + str.charAt(itr);
+              }
 
+              return FinalStr;
     }

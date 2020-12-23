@@ -29,3 +29,19 @@ My solution 2 :
 		    return str + str + str;
 	
           }
+My Solution 3 : 
+---------------
+	public String backAround(String str) 
+	{
+	  if (str.length() >= 2)
+	   return Character.toString(str.charAt(str.length()-1)) + str + Character.toString(str.charAt(str.length()-1));
+	  else
+	    return str + str + str;
+	}
+
+My Solution 4 :
+---------------
+	public String backAround(String str) 
+	{
+  		return (str.length() >= 2) ? Character.toString(str.charAt(str.length()-1)) + str + Character.toString(str.charAt(str.length()-1)) : str + str + str;
+	}

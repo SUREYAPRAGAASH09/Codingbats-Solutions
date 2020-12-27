@@ -27,4 +27,5 @@ My Solution :
             for (int itr = 1; itr <= RunUpTo; itr ++)
               chars[strlen - itr] = Character.toUpperCase(str.charAt(strlen - itr));   
           }
+           return String.valueOf(chars);
      }

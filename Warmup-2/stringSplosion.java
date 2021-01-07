@@ -27,3 +27,20 @@ My Solution :
     }
     return newStr;
   }
+
+My Solution 2 :
+---------------
+    public String stringSplosion(String str) 
+    {
+      int strLenCnt = 0, strLen = str.length()-1;
+      String newStr = "";
+
+      while (strLen >= strLenCnt)
+      {
+        newStr = newStr + str.substring(0,strLenCnt+1);
+        strLenCnt += 1;
+      }
+
+      return newStr;
+    }
+

@@ -19,3 +19,57 @@ My Solution :
       }
       return CntNine;
    }
+
+My Solution 2 :
+---------------
+    The above problem is solved using hash table concept but using Array.
+    public int arrayCount9(int[] nums) 
+    {
+      int KeyItr = -1, valueItr = -1, tempValue = 0, index = 0, NineCnt = 0;
+      int[] key = new int[nums.length];
+      int[] value = new int[nums.length];
+      boolean isPresent = false;
+
+      for (int numsItr = 0; numsItr < nums.length; numsItr++)
+      {
+        //To Check whether a particular number is present or not
+        for (int isPresentItr = 0;isPresentItr < key.length; isPresentItr++)
+        {
+          if (key[isPresentItr] == nums[numsItr])
+          {
+            isPresent = true;
+            break;
+          }
+          else
+            isPresent = false;
+        }
+
+        if (!(isPresent))
+        {
+          KeyItr += 1;valueItr += 1;
+          key[KeyItr] = nums[numsItr];
+          value[valueItr] = 1;
+        }
+        else
+        {
+          index = 0;
+          //To get Index value from key array 
+          for (int indexItr = 0;indexItr < key.length; indexItr++)
+          {
+            if (key[indexItr] == nums[numsItr])
+              break;
+            else
+              index += 1;
+          }
+          value[index] = value[index] + 1;
+        }
+      }
+
+      // Return nineCnt value
+      for (int itr = 0; itr < nums.length; itr++)
+      {
+        if (key[itr] == 9)
+          NineCnt = value[itr];
+      }
+      return NineCnt;
+    }

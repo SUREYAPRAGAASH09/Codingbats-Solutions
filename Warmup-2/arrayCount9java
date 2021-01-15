@@ -73,3 +73,29 @@ My Solution 2 :
       }
       return NineCnt;
     }
+    
+ My Solution 3 :
+ ---------------
+ The above Problem solved using hashmap.
+ public int arrayCount9(int[] nums) 
+ {
+      HashMap<Integer, Integer> Dict = new HashMap<Integer, Integer>(); 
+        int returnValues = 0;
+
+      for (int itr = 0; itr < nums.length; itr++)
+      {
+          if (Dict.containsKey(nums[itr]))
+              Dict.put(nums[itr], Dict.get(nums[itr]) + 1);
+          else
+              Dict.put(nums[itr], 1);
+      }
+
+      for (int itr = 0; itr < nums.length; itr++)
+      {
+        if (Dict.containsKey(9))
+           returnValues = Dict.get(9);
+      }
+
+      return returnValues; 
+ }
+

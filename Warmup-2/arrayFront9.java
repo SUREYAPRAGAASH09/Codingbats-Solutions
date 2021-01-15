@@ -12,13 +12,13 @@ My Solution :
 -------------
   public boolean arrayFront9(int[] nums) 
   {
-    Boolean ContainNine = false;
+    Boolean ContainsNine = false;
 
     for (int itr = 0;itr < nums.length; itr++)
     {
       if ((nums[itr] == 9) && (4 > itr))
-        ContainNine = true;
+        ContainsNine = true;
     }
 
-    return ContainNine;
+    return ContainsNine;
 }

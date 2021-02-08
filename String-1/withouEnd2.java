@@ -13,3 +13,12 @@ My Solution :
     public String withouEnd2(String str) {
     return (str.length() >= 3) ? str.substring(1, str.length()-1)  : "" ;
   }
+My Solution 2:
+--------------
+    public String withouEnd2(String str) {
+      String newStr = ""; int length = str.length();
+      for(int iterator = 1; length-1 > iterator; iterator++)
+        newStr = newStr + str.charAt(iterator);
+
+      return newStr;
+    }

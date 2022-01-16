@@ -23,3 +23,22 @@ My Solution :
 
       return newStr; 
     }
+
+My Second Solution : 
+--------------------
+    public String frontTimes(String str, int n) 
+    {
+      String front = "";
+      String newStr = "";
+      for (int i=0; i<str.length(); i++)
+      {
+        front = front + Character.toString(str.charAt(i));
+        if (i == 2) break;
+      }
+
+      for (int i=0; i<n; i++)
+      {
+        newStr = newStr + front;
+      }
+      return newStr;
+    }

@@ -28,3 +28,15 @@ My Solution :
     }
     return newStr;
   }
+
+My second solution : 
+--------------------
+    public String stringBits(String str) 
+    {
+      String newStr = "";
+      for (int i=0; i<str.length(); i+=2)
+      {
+        newStr = newStr + Character.toString(str.charAt(i));
+      }
+      return newStr;
+    }

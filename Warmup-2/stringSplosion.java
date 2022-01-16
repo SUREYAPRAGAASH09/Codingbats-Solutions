@@ -44,3 +44,17 @@ My Solution 2 :
       return newStr;
     }
 
+My solution 3 : 
+---------------
+    public String stringSplosion(String str) 
+    {
+      String newStr = "";
+      for (int i=1;i<=str.length(); i++)
+      {
+        for (int j=0; j<i; j++)
+        {
+          newStr = newStr + Character.toString(str.charAt(j));
+        }
+      }
+      return newStr;
+    }

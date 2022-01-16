@@ -35,3 +35,23 @@ My Solution :
       }
       return ResultFlag;
   }
+
+My second Solution : 
+--------------------
+        boolean doubleX(String str) 
+        {
+          boolean flag = false;
+          int temp;
+          //char C1 = '',C2 = ''; 
+          for (int i=0; i<str.length()-1; i++)
+          {
+            temp = i+1;
+            if ((str.charAt(i) == 'x'))
+            {
+              if (str.charAt(i) == str.charAt(temp)) flag = true;
+              break;
+            }
+          }
+          return flag;
+        }
+

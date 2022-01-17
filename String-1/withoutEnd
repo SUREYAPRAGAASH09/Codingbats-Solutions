@@ -1,0 +1,26 @@
+
+                                                        withoutEnd
+                                                        
+Problem statement : 
+-------------------
+  Given a string, return a version without the first and last char, 
+  so "Hello" yields "ell". The string length will be at least 2.
+  
+Sample Testcase:
+----------------
+  withoutEnd("Hello") → "ell"
+  withoutEnd("java") → "av"
+  withoutEnd("coding") → "odin"
+  
+My Solution 1 : 
+---------------
+  public String withoutEnd(String str) 
+  {
+    int strlen = str.length();
+    String newstr = "";
+    if (strlen >= 3)
+    {
+      for (int i=1; i<strlen-1; i++) newstr = newstr + str.charAt(i);
+    }
+    return newstr;
+  }

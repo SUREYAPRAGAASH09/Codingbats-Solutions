@@ -1,0 +1,30 @@
+                                                          First Two
+Problem statement : 
+-------------------
+  Given a string, return the string made of its first two chars, so the String "Hello" yields "He". 
+  If the string is shorter than length 2, return whatever 
+  there is, so "X" yields "X", and the empty string "" yields the empty string "". Note that str.length() returns the length of a string.
+
+sample test case : 
+-------------------
+  firstTwo("Hello") → "He"
+  firstTwo("abcdefg") → "ab"
+  firstTwo("ab") → "ab"
+
+My Solution 1 : 
+----------------
+  public String firstTwo(String str) 
+  {
+    int strlen = str.length(), i = 0;
+    String newstr = "";
+
+    if (strlen >= 3)
+    {
+      newstr = newstr + str.charAt(0) + str.charAt(1);
+    }
+    else
+    {
+      newstr = str;
+    }
+    return newstr;
+  }

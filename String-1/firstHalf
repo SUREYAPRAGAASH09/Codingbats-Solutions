@@ -1,0 +1,23 @@
+                                                                      
+                                                                      firstHalf
+                                                                      
+Problem Statement : 
+--------------------
+  Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
+  
+Test case : 
+-----------
+  firstHalf("WooHoo") → "Woo"
+  firstHalf("HelloThere") → "Hello"
+  firstHalf("abcdef") → "abc"
+  
+My Solution 1 :
+---------------
+  public String firstHalf(String str) 
+  {
+    String newstr = "";  
+    int strlen = str.length();
+    if (strlen % 2 == 0)
+      for(int i=0; i<strlen/2; i++) newstr = newstr + str.charAt(i);
+    return newstr;
+  }

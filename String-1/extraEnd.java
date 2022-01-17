@@ -27,3 +27,21 @@ My Solution 2 :
           String tempStr = (StrLen <= 2) ? str : str.substring(StrLen-2, StrLen);
           return tempStr + tempStr + tempStr; 
         }
+
+My solution 3 :
+---------------
+    public String extraEnd(String str) 
+    {
+      String newStr = "";
+      int strlen = str.length(), gtLstBfrChar = strlen-2, gtLstChar = strlen-1;
+      if (strlen >= 3)
+      {
+        newStr = newStr + str.charAt(gtLstBfrChar);
+        newStr = newStr + str.charAt(gtLstChar);
+      }
+      else
+      {
+        newStr = str;
+      }
+      return newStr + newStr + newStr;
+    }

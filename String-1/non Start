@@ -1,0 +1,28 @@
+
+                                                            non Start
+                                                            
+Problem statement : 
+===================
+  Given 2 strings, return their concatenation, except omit the first char of each. The strings will be at least length 1.
+  
+Sample Testcases : 
+-------------------
+  nonStart("Hello", "There") → "ellohere"
+  nonStart("java", "code") → "avaode"
+  nonStart("shotl", "java") → "hotlava"
+  
+My Solution : 
+--------------
+  public String nonStart(String a, String b) 
+  {
+    String strwthoutFrstchar1 = ""; 
+    String strwthoutFrstchar2 = ""; 
+
+    if (a.length() >= 2)  
+    { for (int i=1; i<a.length(); i++)  strwthoutFrstchar1 += a.charAt(i); }
+
+    if (b.length() >= 2)  
+    { for (int i=1; i<b.length(); i++)  strwthoutFrstchar2 += b.charAt(i); }
+
+    return strwthoutFrstchar1 + strwthoutFrstchar2;
+  }

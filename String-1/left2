@@ -1,0 +1,32 @@
+
+                                                            left2
+                                                            
+Problem Statement : 
+------------------
+  Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. 
+  The string length will be at least 2.
+  
+Sample Testcases : 
+------------------
+  left2("Hello") → "lloHe"
+  left2("java") → "vaja"
+  left2("Hi") → "Hi"
+  
+My Solution :
+-------------
+  public String left2(String str) 
+  {
+    String newStr = "";
+
+    if (str.length() >= 3)
+    {
+      for (int i=2; i<str.length(); i++) newStr += str.charAt(i);
+
+      newStr += str.charAt(0);
+      newStr += str.charAt(1);
+    }
+    else
+      newStr = str;
+
+    return newStr;
+  }

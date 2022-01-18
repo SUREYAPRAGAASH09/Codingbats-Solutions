@@ -4,9 +4,9 @@ Problem Statement :
           
 Test Cases :
 ------------
-    extraEnd("Hello") → "lololo"
-    extraEnd("ab") → "ababab"
-    extraEnd("Hi") → "HiHiHi"
+    right2("Hello") → "loHel"
+    right2("java") → "vaja"
+    right2("Hi") → "Hi"
 My Solution :
 ------------- 
    public String right2(String str) {
@@ -33,3 +33,25 @@ My Solution 2 :
       }
       return newStr; 
     }
+
+My Solution 3: 
+--------------
+   public String right2(String str) 
+   {
+      String newStr = "";
+      int strlen = str.length();
+
+      if (strlen >= 3)
+      {
+        newStr += str.charAt(strlen-2);
+        newStr += str.charAt(strlen-1);
+
+        for (int i=0;i < strlen-2;i++)
+          newStr += str.charAt(i);
+      }
+      else
+        newStr = str;
+
+      return newStr;
+    }
+

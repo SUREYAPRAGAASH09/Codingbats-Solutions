@@ -14,3 +14,24 @@ My Solution :
     public String twoChar(String str, int index) {
       return ((str.length() >= (index + 2)) && (index > 0)) ? str.substring(index, index + 2) : str.substring(0, 2);
     }
+
+My Solution 2 : 
+---------------
+    public String twoChar(String str, int index) 
+    {
+      int strlen = str.length();
+      String newstr = "";
+
+      if ((strlen >= (index + 2)) && (index > 0))
+      {
+        newstr += str.charAt(index);
+        index += 1;
+        newstr += str.charAt(index);
+      }
+      else
+      {
+        newstr += str.charAt(0);
+        newstr += str.charAt(1);
+      }
+      return newstr;
+    }

@@ -22,3 +22,18 @@ My Solution 2:
 
       return newStr;
     }
+
+My Solution 3 : 
+---------------
+    public String withouEnd2(String str) 
+    {
+      String newStr = "";
+      int strlen = str.length();
+
+      if (strlen >= 3)
+      {
+        for (int i=1; i<strlen-1; i++)
+          newStr += str.charAt(i);
+      }
+      return newStr;
+    }

@@ -21,3 +21,19 @@ My Solution :
       return result;
     }
   
+My Solution 2 : 
+---------------
+    public boolean endsLy(String str)
+    {
+      int strlen = str.length();
+      boolean flag = false;
+
+      if (strlen >= 2)
+      {
+        if ((str.charAt(strlen-2) == 'l') && (str.charAt(strlen-1) == 'y'))
+        {
+          flag = true;
+        }
+      }
+      return flag;
+    }

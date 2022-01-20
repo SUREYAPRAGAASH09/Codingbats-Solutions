@@ -1,0 +1,41 @@
+  
+                                                            last chars
+                                                            
+Problem statement : 
+-------------------
+  Given 2 strings, a and b, return a new string made of the first char 
+  of a and the last char of b, so "yo" and "java" yields "ya". 
+  If either string is length 0, use '@' for its missing char.
+  
+Sample Testcases : 
+-----------------
+  lastChars("last", "chars") → "ls"
+  lastChars("yo", "java") → "ya"
+  lastChars("hi", "") → "h@"
+  
+My Solution : 
+-------------
+  public String lastChars(String a, String b) 
+  {
+    int strlenA = a.length(); 
+    int strlenB = b.length();  
+    String newStr = "";
+    if (strlenA > 0)
+    {
+      newStr += a.charAt(0);
+    }
+    else
+    {
+      newStr = "@";
+    }
+
+    if (strlenB > 0)
+    {
+      newStr += b.charAt(strlenB - 1);
+    }
+    else
+    {
+      newStr += "@";
+    }
+    return newStr;
+  }

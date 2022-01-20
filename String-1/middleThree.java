@@ -13,3 +13,14 @@ My Solution :
     public String middleThree(String str) {
       return (str.length() > 3) ? str.substring((str.length()/2)-1, (str.length()/2)+2) : str;
     }
+
+My Solution 2 : 
+---------------
+    public String middleThree(String str) 
+    {
+      String newStr = "";
+      int indexToStart = (str.length() / 2 ) - 1;
+      for (int i = indexToStart; i < (indexToStart + 3); i++)
+        newStr += str.charAt(i);
+      return newStr;
+    }

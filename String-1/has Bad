@@ -1,0 +1,38 @@
+
+                                                                has Bad
+                                                                
+Problem Statement : 
+-------------------
+  Given a string, return true if "bad" appears starting at index 0 or 1 in the string,
+  such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0.
+  Note: use .equals() to compare 2 strings.
+  
+Sample Testcases : 
+------------------
+  hasBad("badxx") → true
+  hasBad("xbadxx") → true
+  hasBad("xxbadxx") → false
+  
+My Solution 1 : 
+---------------
+  public boolean hasBad(String str) 
+  {
+    int strlen = str.length();
+    boolean flag = false;
+    if (strlen >= 3)
+    {
+      if ((str.charAt(0) == 'b') && (str.charAt(1) == 'a') && (str.charAt(2) == 'd'))
+      {
+        flag = true;
+      }
+    }
+
+    if (strlen >= 4)
+    {
+      if ((str.charAt(1) == 'b') && (str.charAt(2) == 'a') && (str.charAt(3) == 'd'))
+      {
+        flag = true;
+      }
+    }
+    return flag;
+  }

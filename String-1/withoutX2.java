@@ -9,7 +9,7 @@ Problem Statement :
 Sample Testcases : 
 ------------------
   withoutX2("xHi") → "Hi"
-  withoutX2("Hxi") → "Hi"
+  withoutX2("Hxi") → "Hi". 
   withoutX2("Hi") → "Hi"
   
 My Solution :

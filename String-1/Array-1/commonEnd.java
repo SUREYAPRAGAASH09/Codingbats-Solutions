@@ -9,11 +9,11 @@ Problem statement :
     
 Sample testcases:
 -----------------
-  commonEnd([1, 2, 3], [7, 3]) → true
-  commonEnd([1, 2, 3], [7, 3, 2]) → false
-  commonEnd([1, 2, 3], [1, 3]) → true
+  commonEnd([1, 2, 3], [7, 3]) → true.
+  commonEnd([1, 2, 3], [7, 3, 2]) → false.
+  commonEnd([1, 2, 3], [1, 3]) → true.
   
-My Solution :
+My Solution:
 -------------
   public boolean commonEnd(int[] a, int[] b) 
   {

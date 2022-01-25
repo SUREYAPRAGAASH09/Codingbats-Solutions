@@ -8,9 +8,9 @@ Problem statement :
     
 Sample testcases : 
 ------------------
-  firstLast6([1, 2, 6]) → true
-  firstLast6([6, 1, 2, 3]) → true
-  firstLast6([13, 6, 1, 2, 3]) → false
+  firstLast6([1, 2, 6]) → true.
+  firstLast6([6, 1, 2, 3]) → true.
+  firstLast6([13, 6, 1, 2, 3]) → false.
   
 My solution :
 -------------
